@@ -61,7 +61,7 @@ Each phase folder should contain the **best-performing model's source code** and
 
 ## Implementation by phase
 
-### [Phase 1 — Legal language model pretraining](phase1/README.md)
+### [Phase 1 — Legal language model pretraining](phase1/README_PHASE1.md)
 
 Phase 1 trains a decoder-only Transformer with multi-head attention and rotary position embeddings (RoPE) on Indian legal texts. A custom BPE tokenizer is used, and different model architectures are compared before selecting the MHA + RoPE decoder. The recorded validation perplexity improved from **4.4559** to **3.8183** after continued training.
 
