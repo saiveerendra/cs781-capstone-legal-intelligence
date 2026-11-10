@@ -80,19 +80,3 @@ The notebooks were written for a **Kaggle GPU environment**. They use Kaggle sec
 6. For inference, update the test input paths and run the test DataLoader and prediction cells to write `submission.json`.
 7. **Check the final export cell before submitting:** the notebook creates `submission.json`, but its ZIP-writing cell refers to `PREDICTION_PATH`, a separate `prediction.json` path. Point the export at the actual predictions file and follow the current Codabench JSON/ZIP format.
 
-These are **execution instructions**, not a claim that the supplied notebook will run end-to-end without configuring the external files and the checkpoint-dependent cells.
-
-## Files in this folder
-
-```text
-phase4/
-├── README.md
-├── phase4-hybrid-lorma (2).ipynb       # Best-model implementation
-├── decoder-phase4 (2).ipynb            # Decoder experiment
-├── encoder-decoder-p4 (2).ipynb        # Encoder–decoder experiment
-├── kerenel-phase4 (1).ipynb            # Kernel experiment
-└── knowledge-distillation-p4 (1).ipynb # Distillation experiment
-```
-
-I have kept the experimental notebooks so it is easier to see the approaches I compared. **For the course's final `code/phase4/` folder, the main best-model implementation is `phase4-hybrid-lorma (2).ipynb`**, together with this README and any non-weight supporting source/config files needed for the run. Checkpoints and model weights should not be included.
-
