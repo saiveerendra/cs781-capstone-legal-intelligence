@@ -136,9 +136,3 @@ These notebooks were written for **Kaggle with GPU enabled**, and several file p
 6. The notebook saves a best checkpoint during training and reloads it for evaluation. Use only checkpoints **created by your own run**; no trained weights are submitted here.
 7. Check the top-seven prediction output and required Codabench submission JSON format before uploading predictions. Different notebooks save test predictions under different output paths and formats.
 
-The main dependencies include `torch`, `numpy`, `pandas`, `tqdm`, `huggingface_hub`, and the Kaggle secret utilities. This archive does not contain a tested, pinned package-version list. The provided notebooks contain their own tokenizer implementation and model classes.
-
-## 6. Notes for the final submission
-
-This archive contains **seven experiment notebooks** and this README; it does **not** contain pretrained weights or training checkpoints. For the course's **best-model-only** code submission, the exact Hybrid LoRA+ notebook used for submission `1037946` should be confirmed and kept together with any code/configuration needed to run it. The LoRMA+ notebook is a related experiment, but its adapter formula is different and it should not be renamed or presented as the official winner without checking the original submission.
-
