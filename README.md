@@ -115,14 +115,3 @@ The phase notebooks were developed on **Kaggle** and use phase-specific input pa
 4. Provide the **tokenizer, pretrained initialization, and any intermediate data files** expected by that notebook. These are external runtime inputs, and their paths may need updating.
 5. Install the packages imported by the notebook, then run its preprocessing, model definition, training/validation, and prediction cells in order.
 6. Check the final `prediction.json` and submission ZIP against the evaluation format required for that phase.
-
-The notebooks use packages including `torch`, `numpy`, `pandas`, `scikit-learn`, `tqdm`, and `huggingface_hub`, depending on the phase. Exact dependencies, dataset paths, output formats, and model initialization requirements are described in each phase README. **Package versions are not pinned**, and the original Kaggle input paths are not automatically portable.
-
-### Reproducibility and submission notes
-
-- **No model weights or checkpoints are uploaded**, as required by the assignment. Some training or inference notebooks expect pretrained initialization weights at runtime; these must be supplied separately when reproducing the experiments.
-- **Phase 1's recorded best run continues from an earlier checkpoint**. Reproducing the same continuation requires that prior training state, even though the checkpoint is not included in the submission archive.
-- Some notebooks in the working archives contain alternative experiments. The **course ZIP should include the best-model code and required non-weight supporting files**, not every experiment by default.
-- The exact notebook-to-official-submission mapping still needs confirmation for **Phase 2 and Phase 7**. Their README files distinguish verified code details from recorded official results.
-- The **official leaderboard scores** above and the **local development/validation metrics** inside notebooks are different evaluations.
-- No API tokens, passwords, or Kaggle secrets should be committed to the repository.
