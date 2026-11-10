@@ -101,20 +101,3 @@ The notebooks were developed for **Kaggle** and contain Kaggle-specific input pa
 5. Supply the pretrained model checkpoint expected by the notebook, updating its original Kaggle path. The checkpoint is a **runtime prerequisite**, not a file to upload in the final ZIP.
 6. Run the notebook cells in order: data loading → deduplication → tokenizer and chunking → architecture setup → pretrained weight loading → model training → validation → prediction generation.
 7. For an official submission, use the required prediction JSON/ZIP format from the Phase 5 course evaluator and the verified best prediction threshold.
-
-**Note:** The code includes environment-specific paths and sometimes uses multiple GPUs. A different environment may need path and device changes. I have not claimed that these notebooks run with no modifications outside their original environment.
-
-## Files
-
-```text
-PHASE5/
-├── README.md
-├── encoder-decoder-p5.ipynb
-├── decoder-phase5.ipynb
-├── hybrid-attention-p5 (2).ipynb
-├── kernel-phase5.ipynb
-└── knowledge-distillation-p5.ipynb
-```
-
-This archive keeps the experiment notebooks for reference. For the course's **best-model-only code submission**, the principal implementation is `encoder-decoder-p5.ipynb`, together with the non-weight files needed to explain and configure it. No weights or checkpoint autosaves are included here.
-
