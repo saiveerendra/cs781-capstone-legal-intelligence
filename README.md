@@ -126,7 +126,3 @@ The notebooks use packages including `torch`, `numpy`, `pandas`, `scikit-learn`,
 - The exact notebook-to-official-submission mapping still needs confirmation for **Phase 2 and Phase 7**. Their README files distinguish verified code details from recorded official results.
 - The **official leaderboard scores** above and the **local development/validation metrics** inside notebooks are different evaluations.
 - No API tokens, passwords, or Kaggle secrets should be committed to the repository.
-
-## Final report
-
-The project report is in [`report/CS781-CP-Sai-Kuruguti-261110059-report.pdf`](report/CS781-CP-Sai-Kuruguti-261110059-report.pdf). It contains the project overview, data analysis, model development, experimental results, error analysis, references, and required LLM Usage Declaration.
