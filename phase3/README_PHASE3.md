@@ -97,12 +97,3 @@ The main notebook retrieves source JSON files using `huggingface_hub`, loads a t
    - The pretrained hybrid-encoder checkpoint (`hybrid_encoder.pt`) used to initialize the model.
 5. Run the notebook cells **in order**. The first training stage uses CL+IT; the next stage fine-tunes on CL.
 6. Inspect the printed validation macro-F1 and micro-F1. The prediction cells create `prediction.json`, and the last cells package it into `submission.zip`.
-
-**Note:** The notebook contains Kaggle-specific `/kaggle/input/...` and `/kaggle/working/...` paths, including an output folder named `cs781_phase2` that is reused in Phase 3. Update paths as necessary. The provided notebook is not fully standalone without the tokenizer, the pretrained encoder checkpoint, and the dataset files. These prerequisites are documented here but **no trained weights or checkpoints are included** in the submission ZIP.
-
-## 8. Folder contents
-
-The folder contains six experiment `.ipynb` notebooks and this README. Notebook autosave copies in `.ipynb_checkpoints/` are not required for understanding or running the experiments and have been left out of the cleaned archive.
-
-**Best model code:** My main Phase 3 hybrid classifier and two-stage training code is present in **`phase3hybrid (2).ipynb`**.
-
