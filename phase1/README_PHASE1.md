@@ -91,15 +91,3 @@ The notebooks were developed in **Kaggle**, so several cells use `/kaggle/input/
 6. Run the validation and generation cells to produce `prediction.json` and `submission.zip`.
 
 For a fresh training run, the continuation setup would need to be changed so the model starts with newly initialized weights. The original run cannot be reproduced exactly from this folder alone without its external token arrays, tokenizer, and earlier checkpoint.
-
-### Dependencies
-
-The notebooks use **Python, PyTorch, NumPy**, and standard Python libraries. Data-preparation cells also use **Hugging Face Hub, Kaggle Secrets, ijson, pandas, and matplotlib**. Package versions are not pinned in this folder.
-
-## 7. Files needed outside this folder
-
-This folder contains experiment notebooks, but **does not include** the original corpus, serialized tokenizer, `.npy` token arrays, or saved model weights. These files are referenced through external datasets and Kaggle paths. I have not included weights or checkpoints in the code archive, as required by the submission instructions.
-
-The `.ipynb_checkpoints/` folder in the original ZIP contains Jupyter autosaves, not separately trained models.
-
-**Best model code:** The code for my best-performing Phase 1 model (MHA + RoPE decoder) is present in `mha-rope-decoder-exp1 (2).ipynb`. The preprocessing code is in `preprocessing (2).ipynb`.
