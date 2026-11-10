@@ -33,32 +33,28 @@ The intended final repository layout is:
 ├── README.md
 ├── 
 │   ├── phase1/
-│   │   ├── README.md
+│   │   ├── README_PHASE1.md
 │   │   └── ...
 │   ├── phase2/
-│   │   ├── README.md
+│   │   ├── README_PHASE2.md
 │   │   └── ...
 │   ├── phase3/
-│   │   ├── README.md
+│   │   ├── README_PHASE3.md
 │   │   └── ...
 │   ├── phase4/
-│   │   ├── README.md
+│   │   ├── README_PHASE4.md
 │   │   └── ...
 │   ├── phase5/
-│   │   ├── README.md
+│   │   ├── README_PHASE5.md
 │   │   └── ...
 │   ├── phase6/
-│   │   ├── README.md
+│   │   ├── README_PHASE6.md
 │   │   └── ...
 │   └── phase7/
-│       ├── README.md
+│       ├── README_PHASE7.md
 │       └── ...
-└── report/
-    └── CS781-CP-Sai-Kuruguti-261110059-report.pdf
+
 ```
-
-Each phase folder should contain the **best-performing model's source code** and the non-weight configuration/support files needed to understand the implementation. The phase READMEs document the experimental notebooks as well. **Model weights and checkpoints are not part of this repository or final submission ZIP.**
-
 ## Implementation by phase
 
 ### [Phase 1 — Legal language model pretraining](phase1/README_PHASE1.md)
@@ -68,38 +64,38 @@ Phase 1 trains a decoder-only Transformer with multi-head attention and rotary p
 **Best model code:** `phase1/mha-rope-decoder-exp1 (2).ipynb`  
 **Preprocessing:** `phase1/preprocessing (2).ipynb`
 
-### [Phase 2 — Legal named entity recognition](phase2/README.md)
+### [Phase 2 — Legal named entity recognition](phase2/README_PHASE2.md)
 
 Phase 2 predicts entity labels and **exact character spans** in legal judgments. Annotated spans are aligned with BPE tokens, token-level classifiers are trained, and final span offsets are reconstructed from predicted BIO tags. The best official result was recorded for a Hybrid LoRA and partial-fine-tuning approach.
 
 **Code note:** `hybrid-model-2 (2).ipynb` documents an encoder + NER head experiment, but its active training code has **not** been confirmed as the exact model behind official submission `976447`. The winning code revision needs to be matched before claiming that file reproduces the best official score.
 
-### [Phase 3 — Rhetorical-role classification](phase3/README.md)
+### [Phase 3 — Rhetorical-role classification](phase3/README_PHASE3.md)
 
 Phase 3 classifies individual judgment sentences using a context-aware encoder model. Nearby sentences provide context, and the best Hybrid model is trained in two stages: first on **CL + IT** data, followed by fine-tuning on **CL**.
 
 **Main model code:** `phase3/phase3hybrid (2).ipynb`
 
-### [Phase 4 — Court judgment prediction](phase4/README.md)
+### [Phase 4 — Court judgment prediction](phase4/README_PHASE4.md)
 
 Phase 4 treats judgment prediction as a binary classification task. Because judgments exceed a single Transformer input, they are split into overlapping chunks. Each chunk is encoded, and the chunk representations are combined with a **BiGRU**. The best approach used LoRA adapters on the encoder's Q, K, V, and O projections.
 
 **Best model code:** `phase4/phase4-hybrid-lorma (2).ipynb`  
 The filename mentions *lorma*, but the active best-model implementation uses **LoRA + hierarchical BiGRU**.
 
-### [Phase 5 — Legal statute identification](phase5/README.md)
+### [Phase 5 — Legal statute identification](phase5/README_PHASE5.md)
 
 Phase 5 predicts statutes applicable to a judgment as a **multi-label classification** problem. The best model used a LoRA-adapted encoder, a BiGRU for combining chunk information, and attention before the 100-label output layer. The official best submission used a prediction threshold of **0.35**.
 
 **Main model code:** `phase5/encoder-decoder-p5.ipynb`
 
-### [Phase 6 — Legal judgment summarization](phase6/README.md)
+### [Phase 6 — Legal judgment summarization](phase6/README_PHASE6.md)
 
 Phase 6 trains sequence-to-sequence models to generate summaries from legal judgments. LoRA and other variants are compared, but the best official result comes from **full fine-tuning of an encoder–decoder Transformer**. In the saved training run, the best validation loss was **3.103317 at epoch 8** out of 10 epochs.
 
 **Best model code:** `phase6/phase6-encoderdecoder-fullfinetuning.ipynb`
 
-### [Phase 7 — Prior case retrieval](phase7/README.md)
+### [Phase 7 — Prior case retrieval](phase7/README_PHASE7.md)
 
 Phase 7 ranks candidate prior cases for each query and returns the **top seven** results. The experiments use chunked text representations, an encoder-based retrieval setup, and random-negative sampling. The compared approaches include LoRA, LoRMA+, full fine-tuning, and other retrieval variants.
 
