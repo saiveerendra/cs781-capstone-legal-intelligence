@@ -92,13 +92,4 @@ The notebooks were written for **Kaggle with GPU enabled**. They are not complet
 5. Run the notebook cells **in order**, including imports, tokenizer loading, preprocessing/data inspection, architecture classes, data loaders, full-fine-tuning setup, training, and generation.
 6. Use the best-validation checkpoint generated **by your run** when executing the final prediction cells. Check the expected prediction JSON schema before uploading to Codabench.
 
-The notebooks use `torch`, `numpy`, `pandas`, `scikit-learn`, `tqdm`, and supporting text-processing/embedding packages imported in their cells. Install any missing packages in your notebook environment. The uploaded archive does not contain a pinned `requirements.txt`, so I have not claimed tested exact package versions.
-
-### What is not included
-
-**No model weights or checkpoints are packaged**, in line with the course submission instructions. Training or inference from the documented pretrained initialization requires supplying the external files yourself. Preprocessing and training are computationally intensive; the saved Kaggle paths and environment are not portable without changes.
-
-## 6. Folder contents
-
-The ZIP contains six experiment notebooks and this README. Jupyter `.ipynb_checkpoints/` autosaves have been omitted because they duplicate the experiment notebooks. For the final course `code/phase6/` folder, the best-model code is `phase6-encoderdecoder-fullfinetuning.ipynb` plus any non-weight supporting source/configuration files needed to run it.
 
