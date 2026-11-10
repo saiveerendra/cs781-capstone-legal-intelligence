@@ -101,9 +101,6 @@ These notebooks were run in **Kaggle**. They contain Kaggle input paths and use 
 
 **A fully independent rerun is not possible from this folder alone:** the data, tokenizer, and pretrained initialization weights are external. Do not upload those model weights or checkpoints with the final assignment archive.
 
-### Dependencies
-
-The notebooks import **Python, PyTorch, NumPy, pandas, scikit-learn, Hugging Face Hub, Kaggle Secrets**, and standard Python modules. Their package versions are not pinned. GPU hardware is used in saved training outputs.
 
 ## 7. Files in this folder
 
@@ -112,6 +109,4 @@ The notebooks import **Python, PyTorch, NumPy, pandas, scikit-learn, Hugging Fac
 - `encoder-decoder-p2.ipynb` — encoder–decoder NER experiment.
 - `kernel-phase2.ipynb` — kernel-attention NER experiment.
 
-The original ZIP also contains `.ipynb_checkpoints/` autosaves; these are duplicates used by Jupyter, not model weight files. They are omitted from this cleaned ZIP.
 
-**Model code in this folder:** The code for my Phase 2 encoder + NER head experiment is in `hybrid-model-2 (2).ipynb`. The exact notebook for my best official Hybrid LoRA submission still needs confirmation before I label it as the winning code.
