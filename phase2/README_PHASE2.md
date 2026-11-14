@@ -46,7 +46,7 @@ flowchart TD
     I --> J[Predictions: start, end, label]
 ```
 
-GitHub renders this diagram automatically in the README.
+
 
 ### Active configuration in `hybrid-model-2 (2).ipynb`
 
