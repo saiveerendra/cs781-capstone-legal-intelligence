@@ -20,7 +20,7 @@ flowchart TD
     H --> I[One of 13 rhetorical-role labels]
 ```
 
-For the main notebook, the instantiated backbone has **10 transformer encoder layers**, hidden dimension **512**, **8 attention heads**, feed-forward dimension **4096**, and maximum sequence length **1024**. The model is initialized from an external pretrained hybrid-encoder checkpoint. Although some configuration constants at the beginning of the notebook say `MODEL_LAYERS = 12`, the actual model construction uses `n_layers=10`.
+For the main notebook, the instantiated backbone has **10 transformer encoder layers**, hidden dimension **512**, **8 attention heads**, feed-forward dimension **4096**, and maximum sequence length **1024**. The model is initialized from an external pretrained hybrid-encoder checkpoint. 
 
 The active classifier in `phase3hybrid (2).ipynb` uses:
 
@@ -30,7 +30,6 @@ The active classifier in `phase3hybrid (2).ipynb` uses:
 - A linear classification head with **13 output labels**; head dropout is **0.2**.
 - Target-only token pooling rather than averaging the surrounding context into the final sentence representation.
 
-The notebook defines additional model classes for other methods, but the above describes the instantiated classifier for the main run.
 
 ## 2. Dataset and preprocessing
 
@@ -80,13 +79,9 @@ The first two values are the validation results printed by `phase3hybrid (2).ipy
 
 These notebooks document comparisons. The main best-model implementation is the `phase3hybrid (2).ipynb` notebook.
 
-## 6. Implementation details
 
-The notebooks are written in **Python / PyTorch** and were developed for a **Kaggle notebook environment**. The implementation contains the transformer blocks, RoPE attention, LoRA layers, sentence-context dataset, padding collator, classifier, training/validation functions, prediction generation, and Codabench `prediction.json` ZIP packaging.
 
-The main notebook retrieves source JSON files using `huggingface_hub`, loads a tokenizer using `pickle`, and loads a pretrained encoder checkpoint using `torch.load`. These **external inputs are not included in this ZIP**.
-
-## 7. How to run
+## 6. How to run
 
 1. Open `phase3hybrid (2).ipynb` in Kaggle with GPU enabled.
 2. Install or make available the imported packages, including **PyTorch, NumPy, pandas, scikit-learn, matplotlib, tqdm, and huggingface_hub**. Kaggle-specific modules such as `kaggle_secrets` are used for access to Hugging Face.
